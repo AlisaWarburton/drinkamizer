@@ -1,0 +1,33 @@
+<%= form_for @drink do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, :size => 30 %>
+    </div>
+  
+    <div class="field">
+     <%= f.label :shop %>
+     <%= f.select :shop, 
+     [["スターバックス", "スターバックス"], 
+     ["タリーズ", "タリーズ"], 
+     ["ドトール", "ドトール"]], include_blank: "選択して下さい" %>
+    </div>
+  
+    <div class="field">
+    　<%= f.label :base %>
+    　<%= f.text_field :base, :size => 30 %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :about %>
+      <%= f.text_field :about, :size => 30 %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :recipe %>
+      <%= f.text_area :recipe, :size => 30 %>
+    </div>
+  
+    <%= f.submit "編集する" %>
+  <% end %>
+  
+  <%= link_to "投稿一覧に戻る", drinks_path %>
