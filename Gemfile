@@ -63,6 +63,8 @@ gem 'cloudinary'
 gem 'dotenv-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
 
 group :production do
   gem 'pg'

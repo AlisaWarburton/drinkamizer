@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :drinks, dependent: :destroy 
   validates :nickname, presence: true
   validates :profile, length: { maximum: 200 }
+
+  mount_uploader :avatar, AvatarUploader
   
   def already_liked?(drink)
     self.likes.exists?(drink_id: drink.id)
