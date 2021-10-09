@@ -62,6 +62,7 @@ gem 'carrierwave' , '~> 1.3' , '>= 1.3.1'
 gem 'cloudinary'
 gem 'dotenv-rails'
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 group :production do
   gem 'pg'
