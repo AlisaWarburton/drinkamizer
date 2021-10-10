@@ -1,0 +1,20 @@
+.mypage {
+    margin: 50px;
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1.5fr));
+    grid-auto-rows: 350px;
+    gap: 50px;
+    vertical-align: text-top;
+	height: auto; /*画像の縦横比を維持 */
+    max-width: 100%; /*画像のはみだしを防ぐ*/
+	box-sizing: border-box;
+}
+
+.image {
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 60%; /* 比率 */
+}

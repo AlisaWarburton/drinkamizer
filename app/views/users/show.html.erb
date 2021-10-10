@@ -1,38 +1,39 @@
-<% if @user.avatar? %>
-  <%= image_tag @user.avatar.url %>
-<% else %>
-  <%= image_tag ("noavatar.jpg"), size: "250x200" %>
-<% end %>
+<%= stylesheet_link_tag 'show', :media => "all" %>
 
-<p>名前 : <%= @user.nickname %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
+<div class="mypage">
+      <div class="user_info">
+            <% if @user.avatar? %>
+                  <%= image_tag @user.avatar.url %>
+            <% else %>
+                  <%= image_tag ("noavatar.jpg"), size: "250x200" %>
+            <% end %>
 
-<% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
+            <p>Name : <%= @user.nickname %></p>
+            <p>Mail : <%= @user.email %></p>
+            <p>About : <%= @user.profile %></p>
 
-<p><%= @user.nickname %>さんの投稿一覧</p>
-<% @user.drinks.each do |t| %>
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
-      <%= t.name %>
-      <%= t.shop %>
-      <%= t.base %>
-      <%= t.about %>
-      <%= t.recipe %>
-      <%= t.created_at %>
-<% end %>
+            <% if current_user.id == @user.id %>
+                  <%= link_to "編集する", edit_user_registration_path %>
+            <% end %>
+      </div>
 
-<p><%= @user.nickname %>さんのいいねした投稿一覧</p>
-<% @user.liked_drinks.each do |t| %>
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
-      <%= t.name %>
-      <%= t.shop %>
-      <%= t.base %>
-      <%= t.about %>
-      <%= t.recipe %>
-      <%= t.created_at %>
-<% end %>
-<!-- ここまで-->
+      <div class="all_posts">
+            <p>All Posts</p>
+            <% @user.drinks.each do |t| %>
+                  <div class="image">
+                        <%= link_to (image_tag "#{t.image_url}"), drink_path(t.id), size: "250x200" if t.image? %>
+                  </div>
+            <% end %>
+      </div>
+
+      <div class="liked_posts">
+            <p>Liked Posts</p>
+            <% @user.liked_drinks.each do |t| %>
+                  <div class="image">
+                        <%= link_to (image_tag "#{t.image_url}"), drink_path(t.id), size: "250x200" if t.image? %>
+                  </div>
+            <% end %>
+      </div>
+</div>
 
 <%= link_to "HOME", drinks_path %>
