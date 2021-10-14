@@ -2,38 +2,54 @@
 
 <div class="mypage">
       <div class="user_info">
-            <% if @user.avatar? %>
-                  <%= image_tag @user.avatar.url %>
-            <% else %>
-                  <%= image_tag ("noavatar.jpg"), size: "250x200" %>
-            <% end %>
-
-            <p>Name : <%= @user.nickname %></p>
-            <p>Mail : <%= @user.email %></p>
-            <p>About : <%= @user.profile %></p>
-
-            <% if current_user.id == @user.id %>
-                  <%= link_to "編集する", edit_user_registration_path %>
-            <% end %>
+            <div class="avatar">
+                  <br>
+                  <% if @user.avatar? %>
+                        <%= image_tag @user.avatar.url, size: "150x125" %>
+                  <% else %>
+                        <%= image_tag ("noavatar.jpg"), size: "150x125" %>
+                  <% end %>
+            </div>
+            <div class="nickname">
+                  <br>
+                  <p class="nickname_name"><%= @user.nickname %></p>
+            </div>
+            <div class="profile_all">
+                  <p class="profile">Profile</p>
+                  <div class="profile_info">
+                        <p class="mail">Mail : <%= @user.email %></p>
+                        <p class="about">About : <%= @user.profile %></p>
+                  </div>
+                  <br>
+                  <% if current_user.id == @user.id %>
+                        <%= link_to "編集する", edit_user_registration_path %>
+                  <% end %>
+            </div>
       </div>
 
       <div class="all_posts">
-            <p>All Posts</p>
+            <div class="all_posts_title">
+                 <p>All Posts</p>
+            </div>
             <% @user.drinks.each do |t| %>
-                  <div class="image">
+                  <div class="all_posts_image">
                         <%= link_to (image_tag "#{t.image_url}"), drink_path(t.id), size: "250x200" if t.image? %>
                   </div>
             <% end %>
       </div>
 
       <div class="liked_posts">
-            <p>Liked Posts</p>
+            <div class="liked_posts_title">      
+                 <p>Liked Posts</p>
+            </div>
             <% @user.liked_drinks.each do |t| %>
-                  <div class="image">
+                  <div class="liked_posts_image">
                         <%= link_to (image_tag "#{t.image_url}"), drink_path(t.id), size: "250x200" if t.image? %>
                   </div>
             <% end %>
       </div>
 </div>
 
-<%= link_to "HOME", drinks_path %>
+<div class="back_to_home">
+      <%= link_to "HOME", drinks_path %>
+</div>
