@@ -35,9 +35,27 @@ select::-ms-expand {
     color: #5A5A5A;
 }
 
+.sign_up_title {
+    display: flex;
+    align-items: center; /* 垂直中心 */
+    justify-content: center; /* 水平中心 */
+    color: #5A5A5A;
+}
+.sign_up_title:before, .sign_up_title:after {
+    border-top: 2px solid;
+    content: "";
+    width: 10em; /* 線の長さ */
+}
+.sign_up_title:before {
+    margin-right: 1em; /* 文字の右隣 */
+}
+.sign_up_title:after {
+    margin-left: 1em; /* 文字の左隣 */
+}
+  
 .sign_up_info {
     display: block;
-    text-align: left;
+    text-align: center;
     color: #5A5A5A;
 }
 
@@ -64,6 +82,41 @@ select::-ms-expand {
     color: #5A5A5A;
 }
 
+.sign_up_avatar_image {
+    display:inline-block;
+    position:relative;
+    // overflow:hidden;
+    border-radius:8px;
+    background:#fff;
+    opacity: 0.60;
+    text-align:center;
+    width: 130px;
+    height: 27px;
+    padding: 10px;
+    border: solid;
+    border-width: thin;
+    border-color: #5A5A5A;
+}
+.sign_up_avatar_image:hover {
+    background: #C2ACA1;
+    cursor: pointer;
+}
+.sign_up_avatar_image input[type=file] {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;    
+    opacity:0;
+}
+
+.sign_up_avatar_image_name {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 10px;
+    position: absolute; top: 1.5px; right: 12px;
+}
+
 .sign_up_nickname {
     display: block;
     font-size: 16px;
@@ -75,6 +128,17 @@ select::-ms-expand {
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     color: #5A5A5A;
+    padding: 10px;
+}
+.sign_up_nickname_box {
+    background-color: #fff;
+    opacity: 0.60;
+    margin-left: 550px;
+    margin-right: 550px;
+    border-radius: 8px;
+    border: solid;
+    border-width: thin;
+    border-color: #5A5A5A;
 }
 
 .sign_up_email {
@@ -88,6 +152,18 @@ select::-ms-expand {
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     color: #5A5A5A;
+    padding: 10px;
+}
+
+.sign_up_email_box {
+    background-color: #fff;
+    opacity: 0.60;
+    margin-left: 550px;
+    margin-right: 550px;
+    border-radius: 8px;
+    border: solid;
+    border-width: thin;
+    border-color: #5A5A5A;
 }
 
 .sign_up_password {
@@ -101,6 +177,18 @@ select::-ms-expand {
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     color: #5A5A5A;
+    padding: 10px;
+}
+
+.sign_up_password_box {
+    background-color: #fff;
+    opacity: 0.60;
+    margin-left: 550px;
+    margin-right: 550px;
+    border-radius: 8px;
+    border: solid;
+    border-width: thin;
+    border-color: #5A5A5A;
 }
 
 .sign_up_password_confimation {
@@ -114,18 +202,39 @@ select::-ms-expand {
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     color: #5A5A5A;
+    padding: 10px;
+}
+
+.sign_up_password_confimation_box {
+    background-color: #fff;
+    opacity: 0.60;
+    margin-left: 550px;
+    margin-right: 550px;
+    border-radius: 8px;
+    border: solid;
+    border-width: thin;
+    border-color: #5A5A5A;
 }
 
 .sign_up_actions {
     display: inline-block;
-    padding: 7px 20px;
     border-radius: 25px;
     text-decoration: none;
     color: #FFF;
-    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    background-image: linear-gradient(45deg, #C2B5B0 0%, #9D8981 100%);
     transition: .4s;
+    padding: 10px;
+    width: 100px;
 }
       
 .sign_up_actions:hover {
-    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+    background-image: linear-gradient(45deg, #C2B5B0 0%, #856B61 100%);
 }
+
+hr {
+    border-width: 2px 0px 0px 0px; /* 太さ */
+    border-style: solid; /* 線種 */
+    border-color: #5A5A5A;
+    margin-left: 515px;
+    margin-right: 515px;
+ }
