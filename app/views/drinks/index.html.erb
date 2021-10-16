@@ -1,11 +1,13 @@
 <%= stylesheet_link_tag 'index', :media => "all" %>
 
-<%= form_tag({controller:"drinks",action:"index"}, method: :get) do %>
-  <%= text_field_tag :search, '', {placeholder: "Look for drink", id: "sbox1"} %>
-  <%= button_tag :type => "submit", style: 'border-style: none;' do %>
-    <i class="fas fa-coffee"></i>
+<div class="searh_container">
+  <%= form_tag({controller:"drinks",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search, '', {placeholder: "Look for drink", id: "sbox1"} %>
+    <%= button_tag :type => "submit", style: 'border-style: none;' do %>
+      <i class="fas fa-coffee"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>  
 <br>
 <div class="paginate">
   <%= page_entries_info @drinks %>

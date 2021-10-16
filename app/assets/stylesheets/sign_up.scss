@@ -1,0 +1,131 @@
+
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='submit'],
+input[type='button'],
+input[type='file'],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.sign_up {
+    text-align: center;
+    color: #5A5A5A;
+}
+
+.sign_up_info {
+    display: block;
+    text-align: left;
+    color: #5A5A5A;
+}
+
+.sign_up_info:focus {
+    outline: none;
+}
+
+.sign_up_info:after, :before  {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sign_up_avatar {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    color: #5A5A5A;
+}
+
+.sign_up_nickname {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    color: #5A5A5A;
+}
+
+.sign_up_email {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    color: #5A5A5A;
+}
+
+.sign_up_password {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    color: #5A5A5A;
+}
+
+.sign_up_password_confimation {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    color: #5A5A5A;
+}
+
+.sign_up_actions {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: .4s;
+}
+      
+.sign_up_actions:hover {
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}

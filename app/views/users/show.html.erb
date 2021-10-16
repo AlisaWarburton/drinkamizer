@@ -33,7 +33,7 @@
             </div>
             <% @user.drinks.each do |t| %>
                   <div class="all_posts_image">
-                        <%= link_to (image_tag "#{t.image_url}"), drink_path(t.id), size: "250x200" if t.image? %>
+                        <%= link_to (image_tag "#{t.image_url}"), drink_path(t.id), size: "20x20" if t.image? %>
                   </div>
             <% end %>
       </div>
@@ -53,3 +53,8 @@
 <div class="back_to_home">
       <%= link_to "HOME", drinks_path %>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
