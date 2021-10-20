@@ -1,16 +1,50 @@
-<h2>Forgot your password?</h2>
+<%= stylesheet_link_tag 'reset', :media => "all" %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="reset">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="reset_title">
+    <h2>Forgot your password?</h2>
   </div>
+  
+  <br>
+  <br>
+  <br>
+  <div class="reset_info">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+      <div class="reset_email">
+        <%= f.label :email %><br />
+        <div class="reset_email_box">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+      
+      <br>
+      <br>
+      <br>
+      <div class="reset_actions">
+        <div class="reset_actions_message">
+          <p>Send me reset password instructions</p>
+        </div>
+        <div class="reset_actions_button">
+          <%= f.submit "Send" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
-<%= render "users/shared/links" %>
+<br>
+<br>
+<br>
+<hr>
+<div class="reset_extra">
+  <%= render "users/shared/links" %>
+</div>
+<br>
+<br>
+<br>

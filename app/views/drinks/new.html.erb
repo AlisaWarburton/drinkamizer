@@ -1,32 +1,79 @@
 <%= stylesheet_link_tag 'new', :media => "all" %>
-<div class="new_drink_container">
-    <p class="title">New Drink</p>
+
+<div class="new_drink">
+<br>
+<br>
+<br>
+  <div class="new_drink_title">
+  <h2>New Drink</h2>
+  </div>
+  <br>
+  <br>
+  <div class="new_drink_info">
     <%= form_for @drink do |f| %>
     
-    <%= f.label :name %>
-    <%= f.text_field :name, :size => 30 %>
+      <div class="new_drink_name">
+        <%= f.label :name %>
+        <div class="new_drink_name_box">
+          <%= f.text_field :name, :size => 30 %>
+        </div>
+      </div>
+      <br>
+      <div class="new_drink_shop">
+        <%= f.label :shop %>
+        <div class="new_drink_shop_box">
+          <%= f.select :shop, 
+          [["スターバックス", "スターバックス"], 
+          ["タリーズ", "タリーズ"], 
+          ["ドトール", "ドトール"],
+          ["その他", "その他"]], include_blank: "選択して下さい" %>
+        </div>
+      </div>
+      <br>
+      <div class="new_drink_base">
+        <%= f.label :base %>
+        <div class="new_drink_base_box">
+          <%= f.text_field :base, :size => 30 %>
+        </div>
+      </div>
+      <br>
+      <div class="new_drink_about">
+        <%= f.label :about %>
+        <div class="new_drink_about_box">
+          <%= f.text_field :about, :size => 30 %>
+        </div>
+      </div>
+      <br>
+      <div class="new_drink_recipe">
+        <%= f.label :recipe %>
+        <div class="new_drink_recipe_box">
+          <%= f.text_area :recipe, :size => 30 %>
+        </div>
+      </div>
+      <br>
+      <div class="new_drink_image">
+      <%= f.label :image %>
+        <div class="new_drink_image_box">
+          <%= f.file_field :image, {placeholder: "Select Image"} %>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="new_drink_button">
+        <%= f.submit "Post" %>
+      </div>
     <br>
-    <%= f.label :shop %>
-    <%= f.select :shop, 
-    [["スターバックス", "スターバックス"], 
-    ["タリーズ", "タリーズ"], 
-    ["ドトール", "ドトール"]], include_blank: "選択して下さい" %>
-  　<br>
-    <%= f.label :base %>
-  　<%= f.text_field :base, :size => 30 %>
-    <br>
-    <%= f.label :about %>
-    <%= f.text_field :about, :size => 30 %>
-    <br>
-    <%= f.label :recipe %>
-    <%= f.text_area :recipe, :size => 30 %>
-    <br>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-    <br>
-  <%= f.submit "Post" %>
-  <br>
-<% end %>
+  <% end %>
 </div>
+<br>
+<br>
+<hr>
 
-<%= link_to "投稿一覧に戻る", drinks_path %>
+<br>
+<br>
+<br>
+<div class="new_drink_home_button">
+  <%= link_to "HOME", drinks_path %>
+</div>
+<br>

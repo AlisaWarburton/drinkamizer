@@ -1,0 +1,126 @@
+
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='submit'],
+input[type='button'],
+input[type='file'],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.reset {
+    text-align: center;
+    color: #5A5A5A;
+}
+
+.reset_title {
+    display: flex;
+    align-items: center; /* 垂直中心 */
+    justify-content: center; /* 水平中心 */
+    color: #5A5A5A;
+}
+.reset_title:before, .reset_title:after {
+    border-top: 2px solid;
+    content: "";
+    width: 7em; /* 線の長さ */
+}
+.reset_title:before {
+    margin-right: 1em; /* 文字の右隣 */
+}
+.reset_title:after {
+    margin-left: 1em; /* 文字の左隣 */
+}
+  
+.reset_info {
+    display: block;
+    text-align: center;
+    color: #5A5A5A;
+}
+
+.reset_info:focus {
+    outline: none;
+}
+
+.reset_info:after, :before  {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.reset_email {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    color: #5A5A5A;
+    padding: 10px;
+}
+
+.reset_email_box {
+    background-color: #fff;
+    opacity: 0.60;
+    margin-left: 550px;
+    margin-right: 550px;
+    border-radius: 8px;
+    border: solid;
+    border-width: thin;
+    border-color: #5A5A5A;
+}
+
+.reset_actions_button {
+    display: inline-block;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: linear-gradient(45deg, #C2B5B0 0%, #9D8981 100%);
+    transition: .4s;
+    padding: 10px;
+    width: 100px;
+}
+      
+.reset_actions_button:hover {
+    background-image: linear-gradient(45deg, #C2B5B0 0%, #856B61 100%);
+}
+
+hr {
+    border-width: 2px 0px 0px 0px; /* 太さ */
+    border-style: solid; /* 線種 */
+    border-color: #5A5A5A;
+    margin-left: 440px;
+    margin-right: 440px;
+}
+
+.reset_extra {
+    display: block;
+    text-align: right;
+    margin-right: 445px;
+    margin-bottom: 100px;
+    margin-top: -15px;
+}
