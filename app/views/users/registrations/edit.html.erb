@@ -10,6 +10,7 @@
   </div>
 
   <br>
+  <br>
   <div class="edit_info">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
@@ -18,9 +19,7 @@
         <%= f.label :avatar %>
         <div class="edit_avatar_box">
           <%= f.file_field :avatar %>
-          <div class="edit_avatar_box_name">
-            <p>Choose an image</p>
-          </div>
+          <i class="fas fa-camera"></i>
         </div>
       </div>
 
@@ -77,9 +76,11 @@
       </div>
       
       <br>
+      <br>
       <div class="edit_actions">
         <%= f.submit "Update" %>
       </div>
+      <br>
       <br>
       <br>
     <% end %>
@@ -92,7 +93,7 @@
 </div>
 
 <div class="edit_back">
-  <%= link_to "Back", :back %>
+  <%= link_to "BACK", :back %>
 </div>
 <br>
 <br>

@@ -84,30 +84,33 @@ select::-ms-expand {
 
 .edit_avatar_box{
     display:inline-block;
-    position:relative;
-    // overflow:hidden;
-    border-radius:8px;
-    background:#fff;
-    opacity: 0.60;
-    text-align:center;
-    width: 130px;
-    height: 27px;
-    padding: 10px;
-    border: solid;
-    border-width: thin;
-    border-color: #5A5A5A;
+    // position:relative;
+    // // overflow:hidden;
+    // border-radius:8px;
+    // background:#fff;
+    // opacity: 0.60;
+    // text-align:center;
+    // width: 130px;
+    // height: 27px;
+    // padding: 10px;
+    // border: solid;
+    // border-width: thin;
+    // border-color: #5A5A5A;
 }
-.edit_avatar_box:hover {
-    background: #C2ACA1;
-    cursor: pointer;
-}
+
 .edit_avatar_box input[type=file] {
     position:absolute;
     top:0;
     left:0;
-    width:100%;
-    height:100%;    
+    width:5%;
+    height:5%;    
     opacity:0;
+}
+
+.fa-camera {
+    display: block;
+    font-size: 30px;
+    color: #5A5A5A;
 }
 
 .edit_avatar_box_name {
