@@ -1,14 +1,12 @@
 <%= stylesheet_link_tag 'drink_show', :media => "all" %>
 
-<div class="drink_show>
-  <br>
-  <br>
+<div class="drink_show">
 
   <div class="drink_show_info">
-    
-    <p><%= image_tag @drink.image_url, size: "250x200" if @drink.image? %></p>
-    
-    <div class="drink_show_like>
+    <br>
+    <br>
+    <p class="drink_show_image"><%= image_tag @drink.image_url, size: "250x200" if @drink.image? %></p>
+    <div class="drink_show_like">
       <% if user_signed_in? %>
         <% if current_user.already_liked?(@drink) %>
           <%= link_to drink_like_path(@drink), method: :delete do %>
@@ -23,101 +21,105 @@
         <i class="far fa-heart"></i><%= @drink.likes.count %>
       <% end %>
     </div>
-
-    <div class="drink_show_name>
+    <div class="drink_show_name">
       <h3>Name</h3>
-      <div class="drink_show_name_info>
+      <div class="drink_show_name_info">
         <p><%= @drink.name %></p>
       </div>
     </div>
-    <div class="drink_show_shop>
+    <div class="drink_show_shop">
       <h3>Shop</h3>
-      <div class="drink_show_shop_info>
+      <div class="drink_show_shop_info">
         <p><%= @drink.shop %></p>
       </div>
     </div>
-    <div class="drink_show_base>
+    <div class="drink_show_base">
       <h3>Base</h3>
-      <div class="drink_show_base_info>
+      <div class="drink_show_base_info">
         <p><%= @drink.base %></p>
       </div>
     </div>
-    <div class="drink_show_about>
+    <div class="drink_show_about">
       <h3>About</h3>
-      <div class="drink_show_about_info>
+      <div class="drink_show_about_info">
         <p><%= @drink.about %></p>
       </div>
     </div>
-    <div class="drink_show_recipe>
+    <div class="drink_show_recipe">
       <h3>Recipe</h3>
-      <div class="drink_show_recipe_info>
+      <div class="drink_show_recipe_info">
         <p><%= @drink.recipe %></p>
       </div>
     </div>
   </div>
 
-  <div class="drink_show_created_at>
-    <h3>Created At</h3>
-    <div class="drink_show_created_at_info>
+  <div class="drink_show_outside">
+    <div class="drink_show_created_at">
       <p><%= @drink.created_at %></p>
     </div>
+
+    <div class="drink_show_delete">
+      <% if user_signed_in? && current_user.id == @drink.user_id %>
+        <div class="drink_show_delete_button">
+          <%= button_to "Delete", drink_path(@drink.id), method: :delete %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="drink_show_edit">
+      <% if user_signed_in? && current_user.id == @drink.user_id %>
+        <div class="drink_show_edit_button">
+          <%= link_to "Edit", edit_drink_path(@drink.id) %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="drink_show_delete>
-    <% if user_signed_in? && current_user.id == @drink.user_id %>
-      <div class="drink_show_delete_button>
-        <%= button_to "Delete", drink_path(@drink.id), method: :delete %>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="drink_show_edit>
-    <% if user_signed_in? && current_user.id == @drink.user_id %>
-      <div class="drink_show_edit_button>
-        <%= link_to "Edit", edit_drink_path(@drink.id) %>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="drink_show_likes>
-    <div class="drink_show_likes_title>
+  <div class="drink_show_likes">
+    <div class="drink_show_likes_title">
       <h3>Likes</h3>
     </div>
-    <div class="drink_show_likes_show>
+    <div class="drink_show_likes_show">
       <% @drink.liked_users.each do |user| %>
-        <li><%= user.email %></li>
+        <li><%= user.nickname %></li>
       <% end %>
     </div>
   </div>
 
   <div class="drink_show_comments">
-    <div class="drink_show_comments_title">
-      <h3>Comments</h3>
-    </div>
-    <div class="drink_show_comments_show">
-      <% @comments.each do |c| %>
-        <div class="drink_show_comments_show_content">
-          <%= c.user.email unless c.user.blank? %>
+    <div class="drink_show_comments1">
+      <div class="drink_show_comments_title">
+        <h3>Comments</h3>
+      </div>
+      <div class="drink_show_comments_show">
+        <% @comments.each do |c| %>
+          <div class="drink_show_comments_show_title">
+            <%= c.user.nickname unless c.user.blank? %>
+          </div>
+          <div class="drink_show_comments_show_content">
+            <%= c.content %>
+          </div>
           <br>
-          <%= c.content %>
-        </div>
-          <br>
-      <% end %>
+        <% end %>
+      </div>
     </div>
     
-    <div class="drink_show_create_comments">
-      <% if user_signed_in? %>
-        <%= form_with(model: [@drink, @comment], local: true) do |f| %>
-          <div class="drink_show_create_comments_box">
-            <%= f.text_area :content %>
-          </div>
-          <div class="drink_show_create_comments_button">
-            <%= button_tag type: "submit" do %>
-              <i class="far fa-comments"></i> Comment
-            <% end %>
-          </div>
+    <div class="drink_show_comments2">
+      <div class="drink_show_create_comments">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@drink, @comment], local: true) do |f| %>
+            <div class="drink_show_create_comments_box">
+              <%= f.text_area :content %>
+            </div>
+            <br>
+            <div class="drink_show_create_comments_button">
+              <%= button_tag type: "submit" do %>
+                <i class="far fa-comments"></i>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
