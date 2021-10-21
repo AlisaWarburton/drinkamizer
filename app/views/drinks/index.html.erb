@@ -2,7 +2,9 @@
 
 <div class="searh_container">
   <%= form_tag({controller:"drinks",action:"index"}, method: :get) do %>
-    <%= text_field_tag :search, '', {placeholder: "Look for drink", id: "sbox1"} %>
+    <div class="search_box">
+      <%= text_field_tag :search, '', {placeholder: "Look for drink", id: "sbox1"} %>
+    </div>
     <%= button_tag :type => "submit", style: 'border-style: none;' do %>
       <i class="fas fa-coffee"></i>
     <% end %>

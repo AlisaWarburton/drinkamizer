@@ -77,19 +77,24 @@
     height: 2.3em;
     width: 350px;
 }
-input[type="text"]{
-    border: none;
+
+.search_box {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 13%;
+}
+
+
+.sbox1 {
     height: 22px;
     display: block;
-    margin: 0 auto;
     text-align: center;
     background-color: #F1EAD4;
     font-family: "Hiragino Kaku Gothic ProN W4", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic Pro W4",
       "ヒラギノ丸ゴ Pro W4", sans-serif;
 }
-input[type="text"]:focus {
-    outline: 0;
-}
+
 .fa-coffee {
     cursor: pointer;
     font-size: 1.3em;

@@ -1,34 +1,4 @@
 
-input,
-button,
-select,
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  font: inherit;
-  outline: none;
-}
-
-textarea {
-  resize: vertical;
-}
-
-input[type='submit'],
-input[type='button'],
-input[type='file'],
-label,
-button,
-select {
-  cursor: pointer;
-}
-
-select::-ms-expand {
-  display: none;
-}
 
 .sign_up {
     text-align: center;
@@ -84,23 +54,23 @@ select::-ms-expand {
 
 .sign_up_avatar_image {
     display:inline-block;
-    position:relative;
+    // position:relative;
     // overflow:hidden;
-    border-radius:8px;
-    background:#fff;
-    opacity: 0.60;
-    text-align:center;
-    width: 130px;
-    height: 27px;
-    padding: 10px;
-    border: solid;
-    border-width: thin;
-    border-color: #5A5A5A;
+    // border-radius:8px;
+    // background:#fff;
+    // opacity: 0.60;
+    // text-align:center;
+    // width: 130px;
+    // height: 27px;
+    // padding: 10px;
+    // border: solid;
+    // border-width: thin;
+    // border-color: #5A5A5A;
 }
-.sign_up_avatar_image:hover {
-    background: #C2ACA1;
-    cursor: pointer;
-}
+// .sign_up_avatar_image:hover {
+//     background: #C2ACA1;
+//     cursor: pointer;
+// }
 .sign_up_avatar_image input[type=file] {
     position:absolute;
     top:0;
@@ -110,11 +80,10 @@ select::-ms-expand {
     opacity:0;
 }
 
-.sign_up_avatar_image_name {
-    text-align: center;
-    font-size: 12px;
-    padding-bottom: 10px;
-    position: absolute; top: 1.5px; right: 12px;
+.fa-camera {
+    display: block;
+    font-size: 30px;
+    color: #5A5A5A;
 }
 
 .sign_up_nickname {
