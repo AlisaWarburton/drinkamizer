@@ -1,33 +1,78 @@
-<%= form_for @drink do |f| %>
-    <div class="field">
+<%= stylesheet_link_tag 'drink_edit', :media => "all" %>
+
+<div class="edit_drink">
+<br>
+<br>
+<br>
+  <div class="edit_drink_title">
+    <h2>Edit Drink</h2>
+  </div>
+  <br>
+  <br>
+  <div class="edit_drink_info">
+    <%= form_for @drink do |f| %>
+    <div class="edit_drink_name">
       <%= f.label :name %>
-      <%= f.text_field :name, :size => 30 %>
+      <div class="edit_drink_name_box">
+        <%= f.text_field :name, :size => 30 %>
+      </div>
     </div>
   
-    <div class="field">
-     <%= f.label :shop %>
-     <%= f.select :shop, 
-     [["スターバックス", "スターバックス"], 
-     ["タリーズ", "タリーズ"], 
-     ["ドトール", "ドトール"]], include_blank: "選択して下さい" %>
+    <div class="edit_drink_shop">
+      <%= f.label :shop %>
+      <div class="edit_drink_shop_box">
+        <%= f.select :shop, 
+        [["スターバックス", "スターバックス"], 
+        ["タリーズ", "タリーズ"], 
+        ["ドトール", "ドトール"],
+        ["その他", "その他"]], include_blank: "選択して下さい" %>
+      </div>
     </div>
   
-    <div class="field">
-    　<%= f.label :base %>
-    　<%= f.text_field :base, :size => 30 %>
+    <div class="edit_drink_base">
+      <%= f.label :base %>
+      <div class="edit_drink_base_box">
+        <%= f.text_field :base, :size => 30 %>
+      </div>
     </div>
   
-    <div class="field">
+    <div class="edit_drink_about">
       <%= f.label :about %>
-      <%= f.text_field :about, :size => 30 %>
+      <div class="edit_drink_about_box">
+        <%= f.text_field :about, :size => 30 %>
+      </div>
     </div>
   
-    <div class="field">
+    <div class="edit_drink_recipe">
       <%= f.label :recipe %>
-      <%= f.text_area :recipe, :size => 30 %>
+      <div class="edit_drink_recipe_box">
+        <%= f.text_area :recipe, :size => 30 %>
+      </div>
     </div>
+    <br>
+    <div class="edit_drink_image">
+    <%= f.label :image %>
+      <div class="edit_drink_image_box">
+        <%= f.file_field :image, {placeholder: "Select Image"} %>
+          <i class="fas fa-camera"></i>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="edit_drink_submit">
+      <%= f.submit "Edit" %>
+    </div>
+    <% end %>
+  </div>
   
-    <%= f.submit "編集する" %>
-  <% end %>
-  
-  <%= link_to "投稿一覧に戻る", drinks_path %>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+
+  <div class="edit_drink_extra">
+    <%= link_to "HOME", drinks_path %>
+  </div>
+  <br>
+  <br>

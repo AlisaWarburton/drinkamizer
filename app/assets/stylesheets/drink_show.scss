@@ -1,0 +1,36 @@
+// .drink_show {
+//     margin: 50px;
+//     gap: 50px;
+//     vertical-align: text-top;
+//     display: flex;
+//     text-align: center;
+// }
+
+.drink_show {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    column-gap: 20px;
+    width: 33%;
+}
+
+
+.drink_show_extra {
+    text-align: center;
+    padding: 0.5em 1em;
+    margin-bottom: 20px;
+    margin-left: 650px;
+    margin-right: 650px;
+    color: #6E7894;
+    background-color: #F1EAD4;
+    border: solid 2px #6E7894;
+    border-radius: 3px;
+    transition: .4s;
+}
+  
+  .drink_show_extra:hover {
+    background: #C2ACA1;
+    border-style: dotted;
+    color: #F1EAD4;
+    transform: scale(1.3, 1.3);
+}
