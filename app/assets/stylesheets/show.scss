@@ -37,6 +37,7 @@
     grid-column-end: 4;
     grid-row-start: 2;
     text-align: right;
+    margin-top: 20%;
 }
 
 .profile {
@@ -79,6 +80,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(100px, auto);
     column-gap: 10px;
+    background: rgba(194,172,161,0.3);
 }
 
 .all_posts_title {
@@ -106,6 +108,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(100px, auto);
     column-gap: 10px;
+    background: rgba(194,172,161,0.3);
 }
 
 .liked_posts_title {

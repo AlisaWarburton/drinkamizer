@@ -5,74 +5,87 @@
   <div class="drink_show_info">
     <br>
     <br>
-    <p class="drink_show_image"><%= image_tag @drink.image_url, size: "250x200" if @drink.image? %></p>
-    <div class="drink_show_like">
-      <% if user_signed_in? %>
-        <% if current_user.already_liked?(@drink) %>
-          <%= link_to drink_like_path(@drink), method: :delete do %>
-            <i class="fas fa-heart faa-tada animated"></i><%= @drink.likes.count %>
+    <div class="drink_show_image_like">
+      <p class="drink_show_image"><%= image_tag @drink.image_url, size: "250x200" if @drink.image? %></p>
+      <div class="drink_show_user">
+        <a href="/users/<%= @drink.user.id %>"><%= @drink.user.nickname %></a>
+      </div>
+      <div class="drink_show_like">
+        <% if user_signed_in? %>
+          <% if current_user.already_liked?(@drink) %>
+            <%= link_to drink_like_path(@drink), method: :delete do %>
+              <i class="fas fa-heart faa-tada animated"></i><%= @drink.likes.count %>
+            <% end %>
+          <% else %>
+            <%= link_to drink_likes_path(@drink), method: :post do %>
+              <i class="far fa-heart faa-tada animated"></i><%= @drink.likes.count %>
+            <% end %>
           <% end %>
         <% else %>
-          <%= link_to drink_likes_path(@drink), method: :post do %>
-            <i class="far fa-heart faa-tada animated"></i><%= @drink.likes.count %>
-          <% end %>
+          <i class="far fa-heart"></i><%= @drink.likes.count %>
         <% end %>
-      <% else %>
-        <i class="far fa-heart"></i><%= @drink.likes.count %>
-      <% end %>
+      </div>
     </div>
     <div class="drink_show_name">
-      <h3>Name</h3>
+      <div class="drink_show_name_title">
+        <h3>Name</h3>
+      </div>
       <div class="drink_show_name_info">
         <p><%= @drink.name %></p>
       </div>
     </div>
     <div class="drink_show_shop">
-      <h3>Shop</h3>
+      <div class="drink_show_shop_title">
+        <h3>Shop</h3>
+      </div>
       <div class="drink_show_shop_info">
         <p><%= @drink.shop %></p>
       </div>
     </div>
     <div class="drink_show_base">
-      <h3>Base</h3>
+      <div class="drink_show_base_title">
+        <h3>Base</h3>
+      </div>
       <div class="drink_show_base_info">
         <p><%= @drink.base %></p>
       </div>
     </div>
     <div class="drink_show_about">
-      <h3>About</h3>
+      <div class="drink_show_about_title">
+        <h3>About</h3>
+      </div>
       <div class="drink_show_about_info">
         <p><%= @drink.about %></p>
       </div>
     </div>
     <div class="drink_show_recipe">
-      <h3>Recipe</h3>
+      <div class="drink_show_recipe_title">
+        <h3>Recipe</h3>
+      </div>
       <div class="drink_show_recipe_info">
         <p><%= @drink.recipe %></p>
       </div>
     </div>
+    <div class="drink_show_outside">
+      <div class="drink_show_edit">
+        <% if user_signed_in? && current_user.id == @drink.user_id %>
+          <div class="drink_show_edit_button">
+            <%= button_to "Edit", edit_drink_path(@drink.id), method: :get %>
+          </div>
+        <% end %>
+      </div>      
+      <div class="drink_show_delete">
+        <% if user_signed_in? && current_user.id == @drink.user_id %>
+          <div class="drink_show_delete_button">
+            <%= button_to "Delete", drink_path(@drink.id), method: :delete %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class="drink_show_outside">
-    <div class="drink_show_created_at">
-      <p><%= @drink.created_at %></p>
-    </div>
-
-    <div class="drink_show_delete">
-      <% if user_signed_in? && current_user.id == @drink.user_id %>
-        <div class="drink_show_delete_button">
-          <%= button_to "Delete", drink_path(@drink.id), method: :delete %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="drink_show_edit">
-      <% if user_signed_in? && current_user.id == @drink.user_id %>
-        <div class="drink_show_edit_button">
-          <%= link_to "Edit", edit_drink_path(@drink.id) %>
-        </div>
-      <% end %>
-    </div>
+  <div class="drink_show_created_at">
+    <p><%= @drink.created_at %></p>
   </div>
 
   <div class="drink_show_likes">
