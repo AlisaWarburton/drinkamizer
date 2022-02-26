@@ -52,11 +52,10 @@
       </div>
       <br>
       <div class="new_drink_image">
-      <%= f.label :image %>
-        <div class="new_drink_image_box">
-          <%= f.file_field :image, {placeholder: "Select Image"} %>
-            <i class="fas fa-camera"></i>
-        </div>
+        <%= f.label :image, class: "new_drink_image_box" do %>
+          <i class="fas fa-camera"></i>
+          <%= f.file_field :image, class: "default" %>
+        <% end %>
       </div>
       <br>
       <br>

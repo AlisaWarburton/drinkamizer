@@ -30,21 +30,22 @@
         <a href="/users/<%= t.user.id %>"><%= t.user.nickname %></a>
       <div class="icon">
         <% if user_signed_in? %>
-        <% if current_user.already_liked?(t) %>
-          <%= link_to drink_like_path(id: t.id, drink_id: t.id), method: :delete do %>
-            <i class="fas fa-heart faa-tada animated"></i><%= t.likes.count %>
-          <% end %>
-        <% else %>
-          <%= link_to drink_likes_path(id: t.id, drink_id: t.id), method: :post do %>
-            <i class="far fa-heart faa-tada animated"></i><%= t.likes.count %>
+          <% if current_user.already_liked?(t) %>
+            <%= link_to drink_like_path(id: t.id, drink_id: t.id), method: :delete do %>
+              <i class="fas fa-heart faa-tada animated"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= link_to drink_likes_path(id: t.id, drink_id: t.id), method: :post do %>
+              <i class="far fa-heart faa-tada animated"></i><%= t.likes.count %>
+            <% end %>
           <% end %>
         <% else %>
           <i class="far fa-heart"></i><%= t.likes.count %>
         <% end %>
         <i class="far fa-comment"></i><%= t.comments.count %>
       </div>
-
     </div>
+    
 
   <% end %>
 
