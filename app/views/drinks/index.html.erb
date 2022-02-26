@@ -37,7 +37,6 @@
           <%= link_to drink_likes_path(id: t.id, drink_id: t.id), method: :post do %>
             <i class="far fa-heart faa-tada animated"></i><%= t.likes.count %>
           <% end %>
-         <% end %>
         <% else %>
           <i class="far fa-heart"></i><%= t.likes.count %>
         <% end %>
